@@ -17,7 +17,7 @@ while (stop! )
             Console.WriteLine("Even and between 26 and 60 inclusive.");
         else if (number % 2 == 0 && (number>60))
             Console.WriteLine("Even and greater than 60.");
-        else if (number % 2 != 0 && (number > 60))
+        else
             Console.WriteLine("Odd and greater than 60.");
 
         Console.WriteLine("do you want to continue enter y or n");
