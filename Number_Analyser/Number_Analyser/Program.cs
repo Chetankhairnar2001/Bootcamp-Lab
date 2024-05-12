@@ -1,7 +1,7 @@
 ﻿Console.WriteLine("hello what is your name");
 string username = Console.ReadLine();
 
-Boolean stop = true;
+bool stop = true;
 
 while (stop! )
 {
