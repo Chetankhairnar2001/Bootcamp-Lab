@@ -8,7 +8,7 @@ while (continue_sum) {
      if(val > 0)
     {
         for(int i=1;i<=val;i++)
-        {
+        {     
             sum += i;
         }
         Console.WriteLine(sum);
