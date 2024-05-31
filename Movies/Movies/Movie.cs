@@ -8,14 +8,14 @@ namespace Movies;
 
 public class Movie
 {
-    public string movieName {  get; set; }
+    public string Title {  get; set; }
     public string category {  get; set; }
     public int runtime {  get; set; }
     public int year {  get; set; }
 
-    public Movie(string movieName, string category, int runtime, int year)
+    public Movie(string Title, string category, int runtime, int year)
     {
-        this.movieName = movieName;
+        this.Title = Title;
         this.category = category;
         this.runtime = runtime;
         this.year = year;

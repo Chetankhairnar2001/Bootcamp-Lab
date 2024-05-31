@@ -4,7 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        // movie names from chatgpt
+        // movie names from chatgpt //instantiation
         Movie m1 = new Movie("Toy Story", "Animated", 81, 1995);
         Movie m2 = new Movie("Finding Nemo", "Animated", 100, 2003);
         Movie m3 = new Movie("The Lion King", "Animated", 88, 1994);
@@ -46,7 +46,7 @@ class Program
             
             foreach(Movie movie in list)
             {   if(movie.category == dict[movie_cat])
-                Console.WriteLine($"{movie.movieName} - released in {movie.year} - watchtime {movie.runtime} mins");
+                Console.WriteLine($"{movie.Title} - released in {movie.year} - watchtime {movie.runtime} mins");
             }
 
             Console.WriteLine("Do you want to Continue? y or n");

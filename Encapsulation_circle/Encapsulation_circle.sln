@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Encapsulation_circle", "Encapsulation_circle\Encapsulation_circle.csproj", "{45514503-EC4E-4E32-A063-9FFCA0425525}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{45514503-EC4E-4E32-A063-9FFCA0425525}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45514503-EC4E-4E32-A063-9FFCA0425525}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45514503-EC4E-4E32-A063-9FFCA0425525}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45514503-EC4E-4E32-A063-9FFCA0425525}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D7F528C1-8C0A-4BAC-B3DB-28E6677C338F}
+	EndGlobalSection
+EndGlobal
