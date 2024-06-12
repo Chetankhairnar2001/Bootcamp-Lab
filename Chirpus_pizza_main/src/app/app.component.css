@@ -1,0 +1,10 @@
+.soldout{
+    color: red;
+    text-decoration: line-through;
+    font-size: large;
+}
+
+table, th, td {
+    border: 1px solid;
+    padding: 5px;
+}
