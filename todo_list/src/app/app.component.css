@@ -1,0 +1,43 @@
+.completed{
+    text-decoration: line-through;
+}
+body{
+    font-family:'Courier New', Courier, monospace;
+    font-weight: 300; 
+    background: linear-gradient(to right, #f857a6, #ff5858);
+    height: 100vh;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75); 
+}
+
+.container{
+    margin: auto;
+    width: 50%;
+    align-items: center;
+    border: 3px solid black;
+    border-radius: 1rem;
+    padding: 1rem;
+    background-color: white;
+}
+
+.container2{
+    border: 3px solid black;
+    border-radius: 1rem;
+    padding: 1rem;
+    align-items: center;
+    margin: auto;
+    width: 70%;
+}
+
+button{
+    background-color: white;
+    border-radius: 5px;
+    color: #ff5858;
+    cursor: pointer;
+}
+
+.high{
+    color: Crimson;
+}
+.low{
+    color: DarkGoldenrod;
+}

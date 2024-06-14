@@ -8,3 +8,16 @@ table, th, td {
     border: 1px solid;
     padding: 5px;
 }
+
+.container{
+    margin:auto;
+    align-items: center;
+    width: 60%;
+    background-color: white;
+}
+
+body{
+    background-color: red;
+    height: 100vh;
+    box-sizing: content-box;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Todo LIST</h2>
+      <h3>A place to Store your todos</h3>
+      <div>
+        @if(todo.length==0){
+        <h2>Congratulations all task Done</h2>
+        } @for (t of todo; track $index) {
+        <p [class.completed]="t.completed">
+          @if(!t.completed){
+          <button (click)="completetask(t)">Completed</button>
+          }
+          {{ t.task }} - {{ t.duration | number }} hr @if (t.priority=="HIGH") {
+          <span class="high"> &uarr; High Priority </span>} @else if
+          (t.priority=="LOW") {<span class="low"> &darr; LOW Priority </span>}
+          <button (click)="deletetask(t)" class="button">X</button>
+        </p>
+        }
+      </div>
+
+      <div class="container2">
+        <label for="task">Enter a new Task:</label>
+        <input type="text" id="task" [(ngModel)]="formTask.task" value="ramesh"/> <br>
+        <label for="duration">How many hours estimate:</label>
+        <input type="number" id="duration" [(ngModel)]="formTask.duration" /> <br>
+        <label>What is priority level:</label>      
+        <input type="radio" id="priority" [(ngModel)]="formTask.priority" id='low' value="LOW"/>
+        <label for="low">LOW</label>
+        <input type="radio" id="priority" [(ngModel)]="formTask.priority" id='normal' value="NORMAL"/>
+        <label for="normal">NORMAL</label>
+        <input type="radio" id="priority" [(ngModel)]="formTask.priority" id='high' value="HIGH"/>
+        <label for="high">HIGH</label> <br>
+        <button (click)="AddTodo()">Add Task</button>
+      </div>
+
+    </div>
+  </body>
+</html>

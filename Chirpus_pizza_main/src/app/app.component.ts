@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { MenuItem } from './models/menu-item';
+import { CurrencyPipe } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet,CurrencyPipe],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -55,4 +56,12 @@ export class AppComponent {
       soldOut: true,
     }
   ];
+
+  total: number = 0;
+  addToOrder(price:number):void{
+    this.total += price;
+  }
+  resetOrder():void{
+    this.total = 0;
+  }
 }

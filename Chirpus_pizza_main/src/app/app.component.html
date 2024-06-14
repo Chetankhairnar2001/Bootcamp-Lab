@@ -1,31 +1,51 @@
-<h1>Welcome to {{title}}</h1>
 
-<table class="table">
-  <tr>
-    <th>Name</th>
-    <th>Category</th>
-    <th>Price</th>
-    <th>Vegeterian</th>
-    <th>Soldout</th>
-  </tr>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Welcome to {{ title }}</h1>
 
-  @for (m of menu_item; track $index) {
-  <tr>
-    <th [class.soldout]="m.soldOut">{{ m.name }}
-      @if(m.soldOut){
-        (Sold Out)
-      }
-    </th>
-    <th>{{ m.category }}</th>
-    <th>${{ m.price }}</th>
-    @if(m.vegetarian){
-    <th>Vegeterian</th>}
-    @else {
+<div class="container">
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Price</th>
+      <th>Vegeterian</th>
+      <th>Soldout</th>
+    </tr>
+
+    @for (m of menu_item; track $index) {
+    <tr>
+      <th [class.soldout]="m.soldOut">
+        {{ m.name }}
+        @if(m.soldOut){ (Sold Out) }
+      </th>
+      <th>{{ m.category }}</th>
+      <th>{{ m.price | currency }}</th>
+      @if(m.vegetarian){
+      <th>Vegeterian</th>
+      } @else {
       <th></th>
+      }
+      <th>
+        <button (click)="addToOrder(m.price)" [disabled]="m.soldOut">
+          Add {{ m.name }}
+        </button>
+      </th>
+    </tr>
     }
-    <th>
-        <button [disabled]="m.soldOut">Add an Order</button>
-    </th>
-  </tr>
-  }
-</table>
+  </table>
+  <br />
+  <br />
+  <h2>Total : {{ total | currency }}</h2>
+  <button (click)="resetOrder()">Reset Price</button>
+</div>
+
+</body>
+</html>
+
