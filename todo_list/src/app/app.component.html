@@ -9,37 +9,65 @@
     <div class="container">
       <h2>Todo LIST</h2>
       <h3>A place to Store your todos</h3>
-      <div>
-        @if(todo.length==0){
-        <h2>Congratulations all task Done</h2>
-        } @for (t of todo; track $index) {
-        <p [class.completed]="t.completed">
+      <input type="text" [(ngModel)]="filter" placeholder="Filter your Todos"/>
+      @if(IsListCompleted()){
+      <h2>Congratulations all task Done</h2>
+      }
+      <ol>
+        <!-- using GetFiltered to pass makes us you filte.input -->
+        @for (t of GetFiltered(); track $index) {
+        <li [class.completed]="t.completed">
           @if(!t.completed){
           <button (click)="completetask(t)">Completed</button>
           }
-          {{ t.task }} - {{ t.duration | number }} hr @if (t.priority=="HIGH") {
+          {{ t.task }} - {{ t.duration | number : "1.1-2" }} hr @if
+          (t.priority=="HIGH") {
           <span class="high"> &uarr; High Priority </span>} @else if
           (t.priority=="LOW") {<span class="low"> &darr; LOW Priority </span>}
           <button (click)="deletetask(t)" class="button">X</button>
-        </p>
+        </li>
         }
-      </div>
+      </ol>
 
       <div class="container2">
         <label for="task">Enter a new Task:</label>
-        <input type="text" id="task" [(ngModel)]="formTask.task" value="ramesh"/> <br>
+        <input
+          type="text"
+          id="task"
+          [(ngModel)]="formTask.task"
+          value="ramesh"
+        />
+        <br />
         <label for="duration">How many hours estimate:</label>
-        <input type="number" id="duration" [(ngModel)]="formTask.duration" /> <br>
-        <label>What is priority level:</label>      
-        <input type="radio" id="priority" [(ngModel)]="formTask.priority" id='low' value="LOW"/>
+        <input type="number" id="duration" [(ngModel)]="formTask.duration" />
+        <br />
+        <label>What is priority level:</label>
+        <input
+          type="radio"
+          id="priority"
+          [(ngModel)]="formTask.priority"
+          id="low"
+          value="LOW"
+        />
         <label for="low">LOW</label>
-        <input type="radio" id="priority" [(ngModel)]="formTask.priority" id='normal' value="NORMAL"/>
+        <input
+          type="radio"
+          id="priority"
+          [(ngModel)]="formTask.priority"
+          id="normal"
+          value="NORMAL"
+        />
         <label for="normal">NORMAL</label>
-        <input type="radio" id="priority" [(ngModel)]="formTask.priority" id='high' value="HIGH"/>
-        <label for="high">HIGH</label> <br>
+        <input
+          type="radio"
+          id="priority"
+          [(ngModel)]="formTask.priority"
+          id="high"
+          value="HIGH"
+        />
+        <label for="high">HIGH</label> <br />
         <button (click)="AddTodo()">Add Task</button>
       </div>
-
     </div>
   </body>
 </html>

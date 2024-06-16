@@ -1,0 +1,29 @@
+﻿@using static CoffeeShopRegistration.Models.User
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model CoffeeShopRegistration.Models.User;
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head><title>Registration</title></head>
+    <body>
+
+    <form class="d-grid" asp-action="Result" asp-controller="Home" method="post">
+        <input asp-for="first_name" placeholder="Enter your First name" class="form-control" />
+        <br />
+        <input asp-for="last_name" placeholder="Enter your Last Name" class="form-control" />
+        <br />
+        <select asp-for="gender" class="form-control" asp-items="Html.GetEnumSelectList<Gender>()"></select>
+        <br />
+        <input asp-for="email" type="email" placeholder="Enter mail" class="form-control" />
+        <br />
+        <input asp-for="password" type="password" placeholder="Enter Password" class="form-control" />
+        <br />
+        <input type="submit" value="Submit" class="btn btn-primary" />
+    </form>
+
+    </body>
+</html>
