@@ -1,0 +1,23 @@
+
+<div class="container">
+  <h2>Famous People in World</h2>
+  <button (click)="toggleDisplay()">Hide Devs</button>
+
+  @if(display){
+
+  <table>
+    <tr>
+      <th>FirstName</th>
+      <th>LastName</th>
+      <th>Innovation</th>
+      <th>Year</th>
+    </tr>
+
+    @for (d of DevResults.complete; track $index) {
+      <!-- tr famous-row is a custom selector -->
+    <tr famous-row [DisplayDev]="d">  
+    </tr>
+    }
+  </table>
+  }
+</div>

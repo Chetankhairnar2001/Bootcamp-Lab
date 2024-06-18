@@ -1,0 +1,15 @@
+<div class="container">
+  <h2>Best Donuts in World</h2>
+  <button (click)="toggleDisplay()">Hide Donuts</button>
+
+  @if(display){
+  <ul>
+
+    @for (d of DonutsResult.results; track d.id) {
+    <li>
+      <app-donut-item [DisplayDonut]="d" ></app-donut-item>
+    </li>
+    }
+  </ul>
+  }
+</div>

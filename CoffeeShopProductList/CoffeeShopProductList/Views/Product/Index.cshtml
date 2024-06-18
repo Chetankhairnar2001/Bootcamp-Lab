@@ -1,0 +1,37 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@using CoffeeShopProductList.Models;
+@model List<Product>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head><title> List </title></head>
+    <body>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Products</th>
+                <th>View Detail</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var prod in Model)
+            {
+                <tr>
+                    <td>@prod.ID</td>
+                    <td>@prod.Name</td>
+                    <td>
+                        <a asp-controller="Product" asp-action="Detail" asp-route-id="@prod.ID">View Detail</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+    </body>
+</html>

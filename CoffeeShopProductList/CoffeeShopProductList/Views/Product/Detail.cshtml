@@ -1,0 +1,14 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model CoffeeShopProductList.Models.Product;
+
+<h2> Product Description </h2>
+<div class="container border" >
+<h3>@Model.Name</h3>
+<h3>Price $@Model.Price</h3>
+<h3>Description: @Model.Description</h3>
+<h3>Category: @Model.Category</h3>
+</div>
