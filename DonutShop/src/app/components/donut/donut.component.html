@@ -1,0 +1,9 @@
+<h3>Home Page</h3>
+
+<h1>Donuts</h1>
+
+<ul>
+@for (d of DonutsResult.results; track $index) {
+    <li><a [routerLink]="['/donuts/',d.id]" >{{ d.name }}</a></li> 
+}
+</ul>

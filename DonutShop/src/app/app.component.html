@@ -1,0 +1,8 @@
+<a routerLink="/donuts">Home</a>     <p></p>
+@if(getCartCount() == 0){
+  <a routerLink="/cart">Cart</a>
+}
+@else{
+<a routerLink="/cart">Cart ( x {{ getCartCount() }} ) </a>
+}
+<router-outlet></router-outlet>
