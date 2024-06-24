@@ -1,0 +1,37 @@
+<h2>Restaurant Faves</h2>
+
+<div>
+    <label for="filterR">Filter by Restaurant: </label>
+    <input (input)="getAll()"  type="text" id="filterR" [(ngModel)]="filterRestaurant">
+    <label for="filterO">Filter by Order Again: </label>
+    <input (change)="getAll()" type="checkbox" id="filterO" [(ngModel)]="filterOrderAgain" value="true" />
+</div>
+
+<table>
+    <tr>
+        <th>Description</th>
+        <th>Restaurant</th>
+        <th>Rating</th>
+        <th>Order Again</th>
+        <th></th>
+    </tr>
+
+    @for (o of allOrders; track o.id) {
+        <tr>
+            <td>{{o.description}}</td>
+            <td>{{o.restaurant}}</td>
+            <td>{{o.rating}}/5</td>
+            <td>
+                @if(o.orderAgain){
+                    <span>&#9989;</span>
+                }
+            </td>
+            <td>
+                <button (click)="deleteOrder(o)" >Delete</button>
+            </td>
+        </tr>
+    }
+
+</table>
+
+<app-add-order-form (Submitted)="addOrder($event)" ></app-add-order-form>

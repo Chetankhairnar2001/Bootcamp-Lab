@@ -45,7 +45,7 @@ namespace Restaurant_Faves.Controllers
                 newOrder.Id = 0;
                 dbContext.Orders.Add(newOrder);
                 dbContext.SaveChanges();
-                return Created($"/Orders/Api/{newOrder.Id}", newOrder);
+                return Created($"api/Orders/{newOrder.Id}", newOrder); //just returns it follow syntax but not necessart
             }
 
             //delete book
